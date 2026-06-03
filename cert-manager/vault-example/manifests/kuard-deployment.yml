@@ -1,0 +1,20 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: kuard
+spec:
+  selector:
+    matchLabels:
+      app: kuard
+  replicas: 1
+  template:
+    metadata:
+      labels:
+        app: kuard
+    spec:
+      containers:
+        - image: dlneintr/kuard:0.2.0
+          imagePullPolicy: Always
+          name: kuard
+          ports:
+            - containerPort: 8080

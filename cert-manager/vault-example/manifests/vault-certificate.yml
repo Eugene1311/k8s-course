@@ -1,0 +1,12 @@
+apiVersion: cert-manager.io/v1
+kind: Certificate
+metadata:
+  name: my-cert1-com
+  namespace: default
+spec:
+  secretName: my-cert1-tls
+  issuerRef:
+    name: my-vault-issuer
+  commonName: demo.localdev.me
+  dnsNames:
+    - demo.localdev.me
