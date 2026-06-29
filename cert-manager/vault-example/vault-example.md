@@ -75,8 +75,8 @@ vault policy write pki_policy pki_policy.hcl
 vault write /auth/token/create policies="pki_policy" no_parent=true no_default_policy=true renewable=true ttl=767h num_uses=0
 ```
 ## Encode token to base64
-```javascript
-btoa('<token>')
+```shell
+echo -n '<token>' | base64
 ```
 ## Put encoded token into secret and create it
 ```shell
